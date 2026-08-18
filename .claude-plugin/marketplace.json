@@ -1,0 +1,16 @@
+{
+  "name": "ifinity",
+  "description": "iFINITY plugins for iMIS EMS Cloud implementation, operations, reporting, and RiSE content work.",
+  "owner": {
+    "name": "iFINITY",
+    "url": "https://github.com/iFINITY-Ltd"
+  },
+  "plugins": [
+    {
+      "name": "agentz",
+      "source": "./plugins/agentz",
+      "description": "iFINITY AgentZ — AI working companion for association teams using iMIS. Membership, events, fundraising, billing, content management, reporting, website design, query building, and system configuration.",
+      "version": "0.7.4"
+    }
+  ]
+}

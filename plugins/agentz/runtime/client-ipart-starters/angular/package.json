@@ -1,0 +1,29 @@
+{
+  "name": "__PROJECT_SLUG__",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.node.mjs",
+    "build": "ng build && node scripts/postbuild-angular.mjs",
+    "check": "node scripts/check.mjs",
+    "package": "ng build && node scripts/postbuild-angular.mjs && node scripts/check.mjs && node scripts/package.mjs",
+    "preview": "ng build && node scripts/postbuild-angular.mjs && node scripts/preview.mjs"
+  },
+  "dependencies": {
+    "@angular/common": "21.2.20",
+    "@angular/compiler": "21.2.20",
+    "@angular/core": "21.2.20",
+    "@angular/platform-browser": "21.2.20",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "21.2.21",
+    "@angular/cli": "21.2.21",
+    "@angular/compiler-cli": "21.2.20",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  }
+}

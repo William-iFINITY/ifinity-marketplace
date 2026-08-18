@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "agentz": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/servers/agentz-mcp",
+      "args": []
+    },
+    "imis-docs": {
+      "type": "http",
+      "url": "https://imis-docs-mcp.hrhxyyydnw.workers.dev/mcp"
+    },
+    "imis-docs-dev": {
+      "type": "http",
+      "url": "https://imis-docs-mcp.hrhxyyydnw.workers.dev/dev-mcp"
+    }
+  }
+}

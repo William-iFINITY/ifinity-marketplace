@@ -1,0 +1,25 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "agentz": {
+      "type": "local",
+      "command": [
+        "${AGENTZ_PLUGIN_ROOT}/servers/agentz-mcp"
+      ],
+      "enabled": true
+    },
+    "imis-docs": {
+      "type": "remote",
+      "url": "https://imis-docs-mcp.hrhxyyydnw.workers.dev/mcp",
+      "enabled": true
+    },
+    "imis-docs-dev": {
+      "type": "remote",
+      "url": "https://imis-docs-mcp.hrhxyyydnw.workers.dev/dev-mcp",
+      "enabled": true
+    }
+  },
+  "instructions": [
+    "${AGENTZ_PLUGIN_ROOT}/.opencode-plugin/instructions.md"
+  ]
+}

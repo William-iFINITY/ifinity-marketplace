@@ -1,0 +1,24 @@
+{
+  "name": "__PROJECT_SLUG__",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.node.mjs",
+    "build": "vite build",
+    "check": "node scripts/check.mjs",
+    "package": "vite build && node scripts/check.mjs && node scripts/package.mjs",
+    "preview": "vite build && node scripts/preview.mjs"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.0.5",
+    "vite": "8.2.1"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  }
+}

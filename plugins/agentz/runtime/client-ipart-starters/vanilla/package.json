@@ -1,0 +1,13 @@
+{
+  "name": "__PROJECT_SLUG__",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.node.mjs",
+    "build": "node scripts/build-vanilla.mjs",
+    "check": "node scripts/check.mjs",
+    "package": "node scripts/build-vanilla.mjs && node scripts/check.mjs && node scripts/package.mjs",
+    "preview": "node scripts/build-vanilla.mjs && node scripts/preview.mjs"
+  }
+}

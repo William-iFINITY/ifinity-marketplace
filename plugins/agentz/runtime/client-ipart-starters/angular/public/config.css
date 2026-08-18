@@ -1,0 +1,12 @@
+.agentz-design.__MOUNT_KEY__ {
+  display: grid;
+  gap: calc(var(--ds-space) * 4);
+  color: var(--ds-ink);
+  background: var(--ds-surface);
+  padding: calc(var(--ds-space) * 5);
+  font-family: var(--ds-font-body);
+}
+
+.agentz-design.__MOUNT_KEY__ textarea {
+  inline-size: 100%;
+}

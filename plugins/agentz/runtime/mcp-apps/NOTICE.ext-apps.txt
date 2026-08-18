@@ -1,0 +1,19 @@
+AgentZ Result Board third-party notice
+
+The generated Result Board contains the self-contained browser export from:
+
+  @modelcontextprotocol/ext-apps 1.7.5
+  https://www.npmjs.com/package/@modelcontextprotocol/ext-apps/v/1.7.5
+  https://github.com/modelcontextprotocol/ext-apps
+
+Browser source SHA-256:
+  5bc0452b9994217df506cb505af20e97e766700513afb7d0b45d255785bb051f
+
+Package archive SHA-256:
+  1cc4155d36eb0251f4205d241e090fc9090b4bd1083f24cb79b3cb5deb6813b6
+
+The browser source was copied without changes from:
+  package/dist/src/app-with-deps.js
+
+The full third-party license is in:
+  runtime/mcp-apps/LICENSE.ext-apps.txt

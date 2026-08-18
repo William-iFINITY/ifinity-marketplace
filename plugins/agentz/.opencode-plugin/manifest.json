@@ -1,0 +1,85 @@
+{
+  "name": "agentz",
+  "version": "0.7.4",
+  "description": "iFINITY AgentZ — AI working companion for iMIS. Membership, events, fundraising, billing, reporting, content management, and system configuration for associations and nonprofits.",
+  "generatedBy": "scripts/generate-opencode-adapter.ts",
+  "pluginRootPlaceholder": "${AGENTZ_PLUGIN_ROOT}",
+  "sources": [
+    ".claude-plugin/plugin.json",
+    ".mcp.json",
+    "agents/",
+    "commands/",
+    "skills/",
+    "hooks/hooks.json"
+  ],
+  "install": {
+    "configFragment": "opencode.json",
+    "skills": {
+      "source": "skills",
+      "link": "symlink",
+      "names": [
+        "advertising-management",
+        "billing-management",
+        "bulk-operations",
+        "business-object-design",
+        "certification-management",
+        "commerce-operations",
+        "communications-management",
+        "configuration-packages",
+        "content-management",
+        "data-explorer",
+        "data-quality",
+        "design-system",
+        "event-management",
+        "forms",
+        "fundraising",
+        "hub-connection",
+        "imis-domain-knowledge",
+        "iqa-query-design",
+        "member-lifecycle",
+        "process-automation",
+        "rise-website-design",
+        "run-query",
+        "system-configuration",
+        "troubleshoot-member",
+        "uk-localisation",
+        "website-migration"
+      ]
+    },
+    "agents": {
+      "dir": "agents",
+      "files": [
+        "configuration-specialist.md",
+        "event-coordinator.md",
+        "fundraising-specialist.md",
+        "imis-data-analyst.md",
+        "implementation-consultant.md",
+        "membership-specialist.md"
+      ]
+    },
+    "commands": {
+      "dir": "commands",
+      "files": [
+        "certification-enroll.md",
+        "content-publish.md",
+        "donor-management.md",
+        "gift-aid.md",
+        "iqa-query.md",
+        "member-cancellation.md",
+        "membership-renewal.md",
+        "onboard-member.md",
+        "send-communication.md",
+        "setup.md"
+      ]
+    },
+    "instructions": [
+      ".opencode-plugin/instructions.md"
+    ]
+  },
+  "hooks": {
+    "source": "hooks/hooks.json",
+    "ported": "instructions",
+    "instructionsFile": ".opencode-plugin/instructions.md",
+    "notes": "Claude prompt hooks have no OpenCode runtime equivalent; their canonical prompts are shipped as always-on instructions."
+  }
+}

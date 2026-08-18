@@ -1,0 +1,45 @@
+{
+  "name": "agentz",
+  "version": "0.7.4",
+  "description": "iFINITY AgentZ — AI working companion for iMIS. Membership, events, fundraising, billing, reporting, content management, and system configuration for associations and nonprofits.",
+  "author": {
+    "name": "iFINITY",
+    "email": "hub@ifinityintelligence.uk",
+    "url": "https://github.com/iFINITY-Ltd"
+  },
+  "homepage": "https://github.com/iFINITY-Ltd/ifinity-mcp",
+  "repository": "https://github.com/iFINITY-Ltd/ifinity-mcp",
+  "license": "MIT",
+  "keywords": [
+    "imis",
+    "ams",
+    "ems",
+    "association",
+    "membership",
+    "nonprofit",
+    "crm",
+    "fundraising",
+    "events",
+    "billing",
+    "rise",
+    "iqa",
+    "reporting",
+    "website"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp-codex.json",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "iFINITY AgentZ",
+    "shortDescription": "AI working companion for iMIS association management",
+    "longDescription": "Complete iMIS EMS Cloud integration — membership, events, fundraising, billing, content management, reporting, website design, query building, and system configuration for associations and nonprofits.",
+    "developerName": "iFINITY",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/iFINITY-Ltd/ifinity-mcp",
+    "brandColor": "#156082"
+  }
+}

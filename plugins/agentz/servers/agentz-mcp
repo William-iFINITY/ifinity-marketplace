@@ -1,0 +1,52 @@
+#!/bin/sh
+# iFINITY AgentZ MCP launcher (POSIX: macOS / Linux).
+#
+# Claude hosts spawn this as the explicitly declared MCP `command`. Its job is to find a Node
+# runtime and run dist/index.js with it — even when the end user has NO
+# standalone Node on PATH — by falling back to the iFINITY AgentZ desktop
+# app's bundled Electron, run as a plain Node interpreter via
+# ELECTRON_RUN_AS_NODE=1. Windows uses the sibling agentz-mcp.cmd instead.
+#
+# Nothing here may write to stdout: the MCP protocol owns stdout. All
+# diagnostics go to stderr.
+
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+ENTRY="$ROOT/dist/index.js"
+
+# 1) Explicit override (developer / packaged-runtime escape hatch).
+if [ -n "${AGENTZ_NODE:-}" ] && [ -f "$AGENTZ_NODE" ]; then
+  export ELECTRON_RUN_AS_NODE=1
+  exec "$AGENTZ_NODE" "$ENTRY"
+fi
+
+# 2) A real Node on PATH (developer machines). Preserve the proxy/CA flags when
+#    the installed Node supports them, otherwise fall back to plain node.
+if command -v node >/dev/null 2>&1; then
+  if node --use-env-proxy --version >/dev/null 2>&1; then
+    exec node --use-env-proxy --use-system-ca "$ENTRY"
+  fi
+  exec node "$ENTRY"
+fi
+
+# 3) Runtime pointer written by the iFINITY AgentZ Hub on startup (its own
+#    Electron executable path). Covers non-default install locations.
+if [ -f "$HOME/.ifinity-agentz/node-runtime" ]; then
+  RT=$(cat "$HOME/.ifinity-agentz/node-runtime" 2>/dev/null)
+  if [ -n "$RT" ] && [ -f "$RT" ]; then
+    export ELECTRON_RUN_AS_NODE=1
+    exec "$RT" "$ENTRY"
+  fi
+fi
+
+# 4) Known macOS Hub install locations.
+for c in \
+  "/Applications/iFINITY AgentZ.app/Contents/MacOS/iFINITY AgentZ" \
+  "$HOME/Applications/iFINITY AgentZ.app/Contents/MacOS/iFINITY AgentZ"; do
+  if [ -f "$c" ]; then
+    export ELECTRON_RUN_AS_NODE=1
+    exec "$c" "$ENTRY"
+  fi
+done
+
+echo "[agentz-mcp] Cannot start: no Node runtime found and the iFINITY AgentZ desktop app was not located. Open or install iFINITY AgentZ (https://ifinityagentz.co.uk), or install Node.js." >&2
+exit 1
